@@ -1,0 +1,43 @@
+﻿# ============================================================
+# HOTFIX — DEVTOOLS-110: API Keys Committed to Repository
+# Priority: P0 | SLA: 15 minutes | Reporter: Security Bot
+# ============================================================
+#
+# INCIDENT: Our security scanner detected API keys and .env files
+# in the repository. The .gitignore is misconfigured.
+#
+# FIX NEEDED:
+# 1. The .gitignore below is missing critical entries
+# 2. Add patterns for: .env files, API keys, node_modules, __pycache__
+# 3. Add patterns for: IDE files (.vscode, .idea), OS files (.DS_Store)
+#
+# BUG: The current .gitignore is nearly empty — most patterns are missing.
+# ============================================================
+
+# .gitignore — INCOMPLETE! Add the missing patterns.
+
+# Build output
+/build/
+/dist/
+
+# Dependencies (this is correct)
+# BUG: node_modules pattern is commented out! Uncomment it.
+# node_modules/
+
+# Environment files
+# BUG: No .env pattern! Secrets are being tracked!
+
+# Python cache
+# BUG: No __pycache__ pattern!
+
+# IDE files
+# BUG: No IDE patterns (.vscode/, .idea/)
+
+# OS files
+# BUG: No OS file patterns (.DS_Store, Thumbs.db)
+
+# API keys and secrets
+# BUG: No pattern for *.key, *.pem, secrets/
+
+# Logs
+*.log
